@@ -12,6 +12,7 @@ public:
 
 void insert_back(Node * head,int data){
 
+
     Node* newNode = new Node(data);
     Node* curr = head;
 
@@ -21,6 +22,19 @@ void insert_back(Node * head,int data){
     }
 
     curr->next = newNode;
+}
+
+void insert_front(Node ** head, int data){
+
+    // make a new node
+    Node* newNode = new Node(data);
+
+
+    // point new node to head
+    newNode->next = *head;
+
+    //point head to new node
+    *head = newNode;
 }
 int main() {
     // Declare variables of the new type
@@ -44,6 +58,7 @@ int main() {
     third->next = NULL;
 
     insert_back(head,4);
+    insert_front(&head,0);
 
     // Print the data in the linked list
     Node* current = head;
