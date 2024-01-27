@@ -10,7 +10,7 @@ public:
     Node(int value) : data(value), next(nullptr) {}
 };
 
-void insert_front(Node * head,int data){
+void insert_back(Node * head,int data){
 
     Node* newNode = new Node(data);
     Node* curr = head;
@@ -43,7 +43,7 @@ int main() {
     third->data = 3;
     third->next = NULL;
 
-    insert_front(head,4);
+    insert_back(head,4);
 
     // Print the data in the linked list
     Node* current = head;
