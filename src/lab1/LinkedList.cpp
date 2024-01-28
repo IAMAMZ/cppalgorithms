@@ -36,6 +36,21 @@ void insert_front(Node ** head, int data){
     //point head to new node
     *head = newNode;
 }
+
+void remove_front(Node ** head){
+
+    if(*head == nullptr){
+        return;
+    }
+
+
+    Node* temp = *head;
+
+    *head= (*head)->next;
+    delete temp;
+    
+}
+
 int main() {
     // Declare variables of the new type
     Node* head = NULL;
@@ -46,6 +61,8 @@ int main() {
     head = (Node*)malloc(sizeof(Node));
     second = (Node*)malloc(sizeof(Node));
     third = (Node*)malloc(sizeof(Node));
+
+   
 
     // Assign data and link nodes
     head->data = 1;
@@ -59,6 +76,7 @@ int main() {
 
     insert_back(head,4);
     insert_front(&head,0);
+    remove_front(&head);
 
     // Print the data in the linked list
     Node* current = head;
