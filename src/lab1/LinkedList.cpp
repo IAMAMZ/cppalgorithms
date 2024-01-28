@@ -51,6 +51,31 @@ void remove_front(Node ** head){
     
 }
 
+void remove_back(Node ** head){
+    // if list empty then 
+     if(*head == nullptr){
+        return;
+    }
+
+    Node* cur = *head;
+
+    //if there is one element reposition the head
+    if ((*head)->next == nullptr){
+        Node * temp = *head;
+        *head = (*head)->next;
+        delete temp;
+
+    }
+
+    // go to the node before the last node
+    while(cur->next!=NULL && cur->next->next!=NULL){
+
+        cur= cur->next;
+    }
+    Node * temp  = cur->next;
+    cur->next=NULL;
+    delete temp;
+}
 int main() {
     // Declare variables of the new type
     Node* head = NULL;
@@ -77,6 +102,7 @@ int main() {
     insert_back(head,4);
     insert_front(&head,0);
     remove_front(&head);
+    remove_back(&head);
 
     // Print the data in the linked list
     Node* current = head;
