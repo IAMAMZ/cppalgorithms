@@ -76,6 +76,57 @@ void remove_back(Node ** head){
     cur->next=NULL;
     delete temp;
 }
+
+void insert_at_index(Node ** head,int data, int index){
+
+
+
+    int currIndex = 0;
+
+    if (*head == NULL){
+        return;
+    }
+    
+    if (index==0){
+
+        Node* newNode = new Node(data);
+        newNode->next = *head;
+        *head = newNode;
+        return;
+    }
+
+    Node * curr = *head;
+
+    while (curr->next!=NULL && currIndex<index-1){
+        
+        curr= curr->next;
+        currIndex++;
+    }
+    if (currIndex!=index-1){
+        std::cout<<"Index is not in bound"<<std::endl;
+        return;
+    }
+
+    //make  a new node
+    Node* newNode = new Node(data);
+
+    // insert it 
+    newNode->next = curr->next;
+    curr->next = newNode;
+
+}
+
+
+void print_linkedList(Node *head){
+    
+  
+    if (head ==NULL){
+        return;
+    }
+      std::cout<<head->data<<std::endl;
+   
+    return print_linkedList(head->next);
+}
 int main() {
     // Declare variables of the new type
     Node* head = NULL;
@@ -99,10 +150,23 @@ int main() {
     third->data = 3;
     third->next = NULL;
 
+    Node* sortedLinkedList = new Node(0);
+
+    insert_back(sortedLinkedList,1);
+    insert_back(sortedLinkedList,2);
+    insert_back(sortedLinkedList,3);
+    insert_back(sortedLinkedList,4);
+    insert_back(sortedLinkedList,5);
+
+   
+    print_linkedList(sortedLinkedList);
+
+
     insert_back(head,4);
     insert_front(&head,0);
     remove_front(&head);
     remove_back(&head);
+    insert_at_index(&head,4,1);
 
     // Print the data in the linked list
     Node* current = head;
@@ -116,6 +180,8 @@ int main() {
     free(head);
     free(second);
     free(third);
+
+    delete sortedLinkedList;
 
     return 0;
 }
