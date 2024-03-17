@@ -6,11 +6,12 @@ project(${CMAKE_APP_NAME})
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 
 # Add subdirectories, these will serve as "subprojects"
-add_subdirectory(src/CreditCard)
-add_subdirectory(src/Lab0)
-add_subdirectory(src/lab1)
-add_subdirectory(src/lab3)
-add_subdirectory(src/Vectors)
+# add_subdirectory(src/CreditCard)
+# add_subdirectory(src/Lab0)
+# add_subdirectory(src/lab1)
+# add_subdirectory(src/lab3)
+# add_subdirectory(src/Vectors)
+add_subdirectory(src/BinaryTree)
 # Add more subdirectories as needed
 
 # Add the executable (assuming it's named 'my_executable')
