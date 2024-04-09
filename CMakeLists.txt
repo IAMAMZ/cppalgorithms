@@ -12,6 +12,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # add_subdirectory(src/lab3)
 # add_subdirectory(src/Vectors)
 add_subdirectory(src/BinaryTree)
+add_subdirectory(src/AVLTree)
 # Add more subdirectories as needed
 
 # Add the executable (assuming it's named 'my_executable')
