@@ -14,6 +14,7 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 add_subdirectory(src/BinaryTree)
 add_subdirectory(src/AVLTree)
 add_subdirectory(src/GraphDFSandBFS)
+add_subdirectory(src/MaxHeap)
 # Add more subdirectories as needed
 
 # Add the executable (assuming it's named 'my_executable')
